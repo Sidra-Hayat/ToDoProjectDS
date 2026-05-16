@@ -1,135 +1,82 @@
-# ToDo List Manager – Data Structures Project (Final)
+🗂️ ToDo List Manager – Data Structures Project
+📌 Project Overview
 
-## Project Summary
-This project is a **Java Swing-based ToDo List Manager** developed as part of the Data Structures course. It demonstrates the practical implementation of multiple data structures in a real-world application.
+The ToDo List Manager is a Java Swing-based desktop application developed as part of a Data Structures and Algorithms course project.
 
-The system allows users to add, delete, update, search, and manage tasks efficiently using a clean, intuitive graphical user interface (GUI).
+It demonstrates the practical implementation of core data structures in a real-world, event-driven application with a clean and modular GUI.
 
-## 📊 Data Structures Used
-- **LinkedList<Task>** – Maintains the main list of tasks in insertion order
-- **Stack<Task>** – Handles urgent tasks using LIFO (Last In, First Out) principle
-- **ArrayList<Task>** – Stores completed tasks for efficient retrieval
-- **HashMap<String, Task>** – Enables O(1) fast task lookup using unique task IDs
-- **HashMap<String, List<Task>>** – Supports efficient searching of tasks by title
+The system is designed using Object-Oriented Design principles and follows a lightweight MVC architecture for better maintainability and separation of concerns.
 
-## ✨ Key Features
-- ✅ Add new tasks with title, description, and priority levels
-- ✅ Edit existing tasks with real-time updates
-- ✅ Delete tasks safely using unique IDs
-- ✅ Search tasks by title or description
-- ✅ Mark tasks as completed and track progress
-- ✅ Sort tasks based on priority (High → Low)
-- ✅ Push and pop urgent tasks using stack operations
-- ✅ Persistent storage using file serialization
-- ✅ Login authentication system for user security
-- ✅ User-friendly and responsive GUI
+🧠 Core Data Structures Implemented
+LinkedList – Maintains dynamic task storage with efficient insertions and deletions
+Stack – Implements LIFO-based urgent task management system
+ArrayList – Stores completed tasks for fast iteration and retrieval
+HashMap<String, Task> – Provides O(1) task lookup using unique identifiers
+HashMap-based indexing – Enables efficient keyword-based task searching
+✨ Key Features
 
-## 🚀 How to Run the Project
+✔ Add, update, and delete tasks with real-time updates
+✔ Priority-based task classification system
+✔ Efficient task search using optimized in-memory indexing
+✔ Stack-based urgent task handling (LIFO operations)
+✔ Task completion tracking with history management
+✔ Persistent storage using Java Serialization
+✔ Secure login authentication system
+✔ Responsive and user-friendly Java Swing GUI
 
-### Prerequisites
-- **Java Development Kit (JDK)** 8 or higher
-- **Java IDE** (IntelliJ IDEA, NetBeans, or Eclipse)
+⚙️ System Architecture
+Architecture Style: MVC (Model-View-Controller)
+Design Approach: Object-Oriented Modular Design
+Data Handling: In-memory + file-based persistence
+UI Layer: Java Swing event-driven interface
+📊 Time Complexity Analysis
+Add Task: O(1) – Direct insertion into LinkedList
+Search by ID: O(1) – HashMap lookup
+Search by Title: O(n) – Linear traversal of dataset
+Delete Task: O(n) – Search + removal operation
+Sort Tasks: O(n log n) – Comparator-based sorting
+🚀 How to Run
+Requirements:
+Java JDK 8 or higher
+IntelliJ IDEA / NetBeans / Eclipse
+Steps:
+Clone or download the repository
+Open project in Java IDE
+Configure JDK 8+
+Run TaskManagerGUI.java
+Default Login:
+Username: lara
+Password: lara123
+🔐 Security Considerations
+Default credentials are for development/testing only
+Production systems should implement password hashing (BCrypt recommended)
+Future improvements should include role-based access control (RBAC)
+🐛 Limitations
+Single-user desktop application (no concurrency support)
+Local file-based persistence only
+No cloud synchronization
+No database integration
+🚀 Future Enhancements
+Multi-user authentication system
+Database integration (MySQL / PostgreSQL)
+Cloud-based task synchronization
+Mobile companion application
+Task categories, tags, and filtering system
+Export functionality (PDF/CSV reports)
+Dark mode UI theme
+🎓 Key Learning Outcomes
+Practical implementation of linear and non-linear data structures
+Real-world application of algorithmic complexity concepts
+Java Swing-based GUI development
+File handling and serialization techniques
+Secure authentication system design
+Modular software architecture principles
+👤 Author
 
-### Steps
-1. Clone or download the project repository
-2. Open the project in your preferred Java IDE
-3. Ensure JDK 8+ is configured in the project settings
-4. Locate and run `TaskManagerGUI.java` file
-5. Login using the default credentials:
-   - **Username:** `lara`
-   - **Password:** `lara123`
+Sidra Hayat
+GitHub: @Sidra-Hayat
 
-## 📁 Project Structure
+📌 Project Type
 
-```
-ToDoProjectDS/
-├── src/
-│   ├── TaskManagerGUI.java       # Main GUI application class
-│   ├── Task.java                 # Task data model class
-│   ├── TaskManager.java          # Core business logic
-│   └── AuthenticationSystem.java  # Login authentication
-├── docs/
-│   └── README_Final.md           # Project documentation (this file)
-└── resources/
-    └── tasks.dat                 # Serialized task storage
-```
-
-## 🔧 Technical Details
-
-### Technology Stack
-- **Language:** Java
-- **GUI Framework:** Java Swing
-- **Data Persistence:** File Serialization
-- **Design Pattern:** MVC (Model-View-Controller)
-
-### Time Complexity Analysis
-- **Add Task:** O(1) – Direct insertion to LinkedList
-- **Search by ID:** O(1) – HashMap lookup
-- **Search by Title:** O(n) – Linear search through HashMap values
-- **Delete Task:** O(n) – Search + remove operation
-- **Sort Tasks:** O(n log n) – Comparator-based sorting
-
-## 📝 Usage Guide
-
-### Adding a Task
-1. Click the **"Add Task"** button
-2. Enter task title, description, and select priority level
-3. Click **"Save"** to add the task
-
-### Searching Tasks
-1. Use the **search bar** at the top
-2. Enter keyword from task title or description
-3. Results update in real-time
-
-### Managing Urgent Tasks
-1. Click **"Push to Stack"** to add task to urgent queue
-2. Click **"Pop from Stack"** to remove urgent task
-3. Stack follows LIFO principle
-
-### Completing Tasks
-1. Select a task from the list
-2. Click **"Mark as Complete"**
-3. Task moves to completed tasks list
-
-## 🎓 Learning Outcomes
-
-This project demonstrates:
-- Implementation of multiple data structures from scratch
-- Practical application of each data structure's strengths
-- GUI development using Java Swing
-- File I/O and serialization concepts
-- Authentication and user management
-- Software design principles (encapsulation, abstraction)
-
-## 🔐 Security Notes
-- Default login credentials are for demonstration purposes
-- For production use, implement password hashing and encryption
-- Consider adding role-based access control
-
-## 🐛 Known Limitations
-- Single-user session (concurrent access not supported)
-- No cloud synchronization
-- Task data stored locally in serialized format only
-
-## 🚀 Future Enhancements
-- Multi-user support with database backend
-- Cloud synchronization
-- Mobile app companion
-- Task categories and tags
-- Due date reminders and notifications
-- Export to CSV/PDF formats
-- Dark mode UI theme
-
-## 📄 License
-This project is developed as an educational assignment for the Data Structures course.
-
-## 👤 Author
-**Sidra Hayat**  
-GitHub: [@Sidra-Hayat](https://github.com/Sidra-Hayat)
-
-## 💬 Questions or Feedback?
-If you have any questions or suggestions for improvement, feel free to open an issue or contact the author.
-
----
-
-**Last Updated:** May 16, 2026
+Academic Project – Data Structures & Algorithms
+Focus: Real-world implementation of core CS concepts using Java
